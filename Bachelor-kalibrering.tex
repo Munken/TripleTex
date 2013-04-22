@@ -40,21 +40,21 @@ for de enkelte cirkulære strips, hvor forstærkningen er den samme.\fxnote{Dett
 I alle disse spektrer bestemmes så centroidværdien af \Pu toppen, og kanalnummeret af denne.
 Kanalnumrerne blev normaliseret til kanalnummeret i strip 1 og blev plottet som funktion af
 $(\cos \phi)^{-1}$. Ud over dette er \cref{eq:deadE}, for forskellige tykkelser, også plottet. Disse er
-normaliseret til det teoretiske udtryk for strip 1.
+normaliseret til det teoretiske udtryk for strip 1. Stoppeevnen er taget fra \cite{Ziegler}.
 
 Dette er plottet på \cref{fig:dead}, for de to detektorer. Ud fra de teoretiske kurver ses, at tykkelsen
 af dødlaget er konsistent med hhv. 3 og \SI{4}{\um} for upstream- og downstreamdektoreren.
 \fxfatal{Der mangler usikkerhedsberegninger.}
 
-\begin{figure}
+\begin{figure}[b]
   \fxfatal{Algoritmen til at bestemme centroidværdien skal optimeres. Overvej om det skal gøres på 2D
     histogrammet. }
   \centering
   \subtop[Upstream]{\includegraphics[width=0.47\columnwidth]{DeadLayerThin}}%
   \hfill
   \subtop[Downstream]{\includegraphics[width=0.47\columnwidth]{DeadLayerThick}}%
-  \caption{De normaliserede energier som funktion af $1/cos\phi$. Kurverne er teoretiske og er plottet
-    for forskellige tykkelser.}
+  \caption{De normaliserede energier som funktion af $1/\cos\phi$. Kurverne angiver det teoretiske
+    udtryk givet i \cref{eq:deadE} og er plottet for forskellige tykkelser.}
   \label{fig:dead}
 \end{figure}
 
@@ -79,6 +79,7 @@ materiale, og ækvivalent til \cref{eq:deadE} kan den samlede rækkevidde skrive
 For at bestemme energien af en given hændelse, så bestemmes først den samlede rækkevidde, hvor
 $R(E_{0})$ bestemmes ved tabelopslag. Dernæst regnes baglæns hvormed energien bestemmes ud fra
 rækkevidden. 
+
 
 
 
