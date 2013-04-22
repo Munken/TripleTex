@@ -8,7 +8,7 @@
 % dansk, papirtypen til A4, sætter dokument til lige store højre og
 % venstre margen, laver to søjler og siger at vi gerne vil lave en
 % artikel, sætter skriftstørrelse til 9pt.
-\documentclass[danish,a4paper,oneside, twocolumn,article,9pt]{memoir}
+\documentclass[danish,a4paper,twoside, article, 11pt]{memoir}
 \usepackage[danish]{babel} %Giver mulighed for dansk orddeling. Slet
 % kun hvis du VED hvad du laver, eller skal
 % skrive noget på engelsk.
@@ -16,7 +16,7 @@
 % linux, så skift utf8 ud med
 % latin1. Tillader danske tegn.
 \usepackage{graphicx} %Tillader indsættelse af billeder
-\setkeys{Gin}{width=0.9\columnwidth, height=0.45\textheight, keepaspectratio}
+\usepackage{caption}
 \usepackage{mathtools} %Ekstra matematik... bare lad den være, du får
 % muligvis brug for den.
 \usepackage{siunitx} %Bruges til at indsætte SI enheder med
@@ -25,29 +25,43 @@
 % matematik). Brug den, eller lad være. ²
 % indsættes med \squaren for at undgå sammenfald
 % med \square fra ams.
-\sisetup{separate-uncertainty=true,
-  quotient-mode = fraction}
 % \usepackage{url} %bruges til at formattere url'er... kan sagtens udelades.
 \usepackage[version=3]{mhchem}
 %\usepackage[hidelinks=true]{hyperref}
 \usepackage{microtype} % Pakke der proever at fikse badbox
 % problemer. Kun kompatibel med pdflatex.
-\usepackage{cleveref}
+
 \usepackage{wasysym}
 \usepackage{multirow}
+\usepackage{xspace}
+\usepackage[caption=false]{subfig}
+\let\subtop\subfloat
+
 \usepackage[flushleft]{threeparttable}
-\usepackage{fixme}
-
-% For at indstille margin: left right ratio
-\setlrmarginsandblock{1.6cm}{1.6cm}{*} % Hvor stjerne betyder udfyldes "automatisk".
-\setlength{\oddsidemargin}{-1cm} %giver mere plads på siden
+\usepackage[draft]{fixme}
+\renewcommand\fxdanishfatalname{Fatal}
 
 
 
+%%%% Forside stuff
+\usepackage{mathpazo}% palatino + matematik
+\usepackage{soul} % lege lege
+
+%\usepackage{autonum}
+\usepackage[hidelinks, hypertexnames=false]{hyperref}
+\usepackage{cleveref}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%          Forside          %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
+\newcommand\stext[1]{\an{\scshape#1}}
 \pagestyle{simple} %Giver tom footer og sidetal i header
 
 
-\newcommand{\ott}[1]{$\overline{\mathtt{#1}}$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Costumized math functions %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +74,20 @@
 % for double partial derivatives
 \newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial #2^3}}
 
-\graphicspath{{../Figures/}}
+\graphicspath{{./Figures/}}
+\setkeys{Gin}{width=0.9\columnwidth}
+
+
+
+%%% Grundstoffer
+\newcommand{\Pu}{\ce{^{239}Pu}\xspace}
+
+
+%%% Siunitx
+\sisetup{separate-uncertainty=true,
+  quotient-mode = fraction}
+
+\DeclareSIUnit\um{\micro\meter}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,42 +95,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
-\title{{\Huge Triple $\alpha$ henfald} \\Bachelor Projekt}
-
-\author{
-  Michael Munch \\
-  20103561 \\
-  Institut for Fysik og Astronomi, Aarhus Universitet, Danmark} 
-
-
-\date{\today} %Dato. Kan evt. ændres, hvis I ikke har lavet rapporten idag.
-
-
-%% Det følgende er sidehovedet på første siden. LEG IKKE MED DETTE.
-% \makepagestyle{topbox}
-% \makeoddhead{topbox}{\textbf{Modtaget dato:} \newline (forbeholdt
-% instruktor) \newline \vspace{1cm} \qquad}
-% {\begin{flushright}
-%   \textbf{Godkendt: \newline Dato: \newline Underskrift:
-%   \newline} \end{flushright}} SLUT BOKS
 
 \begin{document}
 
-\bigskip
 
-% Indsætter title og sidehoved
+\input{Bachelor-forside}
+%\input{Bachelor-dedikation}     
+\frontmatter
 
-\twocolumn[
+\tableofcontents
+\newpage
+\listoffixmes
 
-\vspace*{-70pt}
-
-\maketitle
-% \thispagestyle{topbox} %% Dette er boksen i toppen af foerste side. Den kan genindfoeres ved at udkommentere denne linje samt de fem linjer ovenfor.
-
-\input{Bachelor-abstract}
-]
-\saythanks %siger tak, det vil sige at den her skriver din email nederst på siden
-
+\mainmatter
 \input{Bachelor-indledning}
 \input{Bachelor-opstilling}
 \input{Bachelor-kalibrering}

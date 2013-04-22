@@ -1,2 +1,91 @@
 \chapter{Kalibrering}
 \label{cha:kalibrering}
+
+For at kunne oversætte mellem udstyrets kanalnummer og en given energi skulle der foretages en
+kalibrering. Til dette formål blev der benyttet en kilde, der bestod af tre $\alpha$-kilder:
+\ce{^{241}Am}, \ce{^{239}Pu} og \ce{^{244}Cm}.
+
+Idet forstærkningen er indstillet forskelligt i de enkelte strips og sektorer, er det
+nødvendigt at kalibrere dem enkeltvis. Linierne er skarpt adskilte, derfor kan kalibreringen udføres
+ved at fitte lineært til deres centroid værdier.  
+
+Det skulle dog vise sig ikke at være helt så nemt, idet detektoren havde et dødlag, der var et par
+micrometer tykt, $\Delta x$. Det har den effekt, at partikler, der rammer længere ude på detektoren, vil
+miste mere energi end de, der rammer de inderste strips. De relevante størrelser er den målte energi
+$E_{0}$, energien før dødlaget $E$ og vinklen $\phi$ mellem partiklens hastighed og detektorens
+normal. Ud fra nogle enkelte geometriske betragtninger kan et udtryk for $E$ opskrives
+\fxnote{Her skal være en tegning.}
+
+%Lad den målte energy være
+% betegnet med $E_{0}$ og energien uden dødlag være $E$. Defineres så $\phi$ som vinklen mellem
+% partiklens hastighed og detektorens normal, så ses nemt at
+\begin{equation}
+  \label{eq:deadE}
+  E = E_{0} + \d{E}{x} \frac{\Delta x}{\cos \phi}  .
+\end{equation}
+Det sidste led er energitabet i dødlaget, som afhænger af stoppeevnen, $\d{E}{x}$, af materialet.
+
+\section{Estimation af dødlagets tykkelse}
+\label{sec:dodlag}
+
+For at kunne bestemme tykkelsen af dødlaget er det nødvendigt at kende kanalnumrene ved forskellige
+vinkler, men som sagt er forstærkningen indstillet forskelligt i ringene.
+
+Løsningen på dette er at udvælge en radial sektor. Hver gang denne sektor bliver ramt, findes de
+cirkulære strips, hvor kanalnummeret er det samme plus minus et vist offset. Offsettet korrigerer
+for at forstærkningen ikke er den samme. Kanalnummeret fra de radiale sektor tilføjes så til et
+histogram for den cirkulære strip, der matchede. På denne måde er det muligt, at bestemme spektret
+for de enkelte cirkulære strips, hvor forstærkningen er den samme.\fxnote{Dette skal læses igennem}
+
+I alle disse spektrer bestemmes så centroidværdien af \Pu toppen, og kanalnummeret af denne.
+Kanalnumrerne blev normaliseret til kanalnummeret i strip 1 og blev plottet som funktion af
+$(\cos \phi)^{-1}$. Ud over dette er \cref{eq:deadE}, for forskellige tykkelser, også plottet. Disse er
+normaliseret til det teoretiske udtryk for strip 1.
+
+Dette er plottet på \cref{fig:dead}, for de to detektorer. Ud fra de teoretiske kurver ses, at tykkelsen
+af dødlaget er konsistent med hhv. 3 og \SI{4}{\um} for upstream- og downstreamdektoreren.
+\fxfatal{Der mangler usikkerhedsberegninger.}
+
+\begin{figure}
+  \fxfatal{Algoritmen til at bestemme centroidværdien skal optimeres. Overvej om det skal gøres på 2D
+    histogrammet. }
+  \centering
+  \subtop[Upstream]{\includegraphics[width=0.47\columnwidth]{DeadLayerThin}}%
+  \hfill
+  \subtop[Downstream]{\includegraphics[width=0.47\columnwidth]{DeadLayerThick}}%
+  \caption{De normaliserede energier som funktion af $1/cos\phi$. Kurverne er teoretiske og er plottet
+    for forskellige tykkelser.}
+  \label{fig:dead}
+\end{figure}
+
+
+\section{Kalibreringsalgoritmen}
+\label{sec:kalalgo}
+\fxnote{Overvej denne overskrift}
+
+Når tykkelsen er kendt, kan den målte energi $E_{0}$ bestemmes. Dermed kan vores detektorer
+kalibreres. Fordi energitabet både afhænger af indgangsenergien og hvilken partikel, der er tale
+om, så er det nødvendigt at bestemme energitabet for hver enkel hændelse.
+
+For energier hvor stoppeevnen er stor, så vil det give anledning til en fejl, hvis energitabet anses
+som konstant hele vejen igennem materialet. Det samlede tab skulle istedet udregnes som et
+integral. Istedet benyttes projected range, som er middel rækkevidden af en partikel i et givent
+materiale, og ækvivalent til \cref{eq:deadE} kan den samlede rækkevidde skrives som
+\begin{equation}
+  \label{eq:deadR}
+  R(E) = R(E_{0}) + \frac{\Delta x}{\cos \phi} .
+\end{equation}
+
+For at bestemme energien af en given hændelse, så bestemmes først den samlede rækkevidde, hvor
+$R(E_{0})$ bestemmes ved tabelopslag. Dernæst regnes baglæns hvormed energien bestemmes ud fra
+rækkevidden. 
+
+
+
+
+
+
+
+
+
+
