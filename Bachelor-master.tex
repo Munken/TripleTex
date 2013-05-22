@@ -31,6 +31,8 @@
 \usepackage{microtype} % Pakke der proever at fikse badbox
 % problemer. Kun kompatibel med pdflatex.
 
+
+\usepackage{suffix}
 \usepackage{wasysym}
 \usepackage{multirow}
 \usepackage{xspace}
@@ -47,10 +49,11 @@
 
 %%%% Forside stuff
 \usepackage{mathpazo}% palatino + matematik
+\usepackage{bm}
 \usepackage{soul} % lege lege
 
 %\usepackage{autonum}
-\usepackage[hidelinks, hypertexnames=false]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 
 
@@ -75,6 +78,7 @@
 \newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} 
 % for double partial derivatives
 \newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial #2^3}}
+\newcommand{\mvec}[1]{\bm{#1}}
 
 \graphicspath{{./Figures/}}
 \setkeys{Gin}{width=0.9\columnwidth}
@@ -84,6 +88,12 @@
 %%% Grundstoffer
 \newcommand{\Pu}{\ce{^{239}Pu}\xspace}
 
+%Be-8
+\newcommand\Be{\ce{^{8}Be}\xspace}
+\WithSuffix\newcommand\Be*{\ce{^{8}Be^*}\xspace}
+% C-12
+\newcommand\Carb{\ce{^{12}C}\xspace}
+\WithSuffix\newcommand\Carb*{\ce{^{12}C^*}\xspace}
 
 %%% Siunitx
 \sisetup{separate-uncertainty=true,
@@ -93,6 +103,16 @@
   space-before-unit = true}
 
 \DeclareSIUnit\um{\micro\meter}
+\DeclareSIUnit\MV{\mega\V}
+
+
+%%%% Små ord
+\newcommand{\beamline}{strålelinien}
+\newcommand{\target}{target}
+\newcommand{\lAND}{\texttt{OG}\xspace}
+\newcommand{\lOR}{\texttt{ELLER}\xspace}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,8 +135,8 @@
 \mainmatter
 \input{Bachelor-indledning}
 \input{Bachelor-opstilling}
+\input{Bachelor-eksparb}
 \input{Bachelor-kalibrering}
-\input{Bachelor-teori}
 \input{Bachelor-rutherford}
 \input{Bachelor-sekventiel}
 \input{Bachelor-dalitz}

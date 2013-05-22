@@ -1,29 +1,52 @@
 \chapter{Opstilling}
 \label{cha:opstilling}
 
-Et beam af protoner accelereres op til den ønskede energi med en 5\MeV Van de Graaf
-accelerator. Dette beam afbøjes med en eletromagnet og sendes ind i beamline, hvor det først
-passerer gennem et hul i midten af den ene detektor, hvorefter en del af det vil kolliderer med et
-\ce{^{11}B}-target på carbon backing.
+En stråle af protoner accelereres op til den ønskede energi med en 5\MV Van de Graaf
+accelerator. Denne stråle afbøjes med en eletromagnet og sendes ind i \beamline, hvor det først
+passerer gennem et hul i midten af den ene detektor, hvorefter en del af det vil kollidere med et
+\ce{^{11}B}-target på kulstof bagbeklædning.
 \fxfatal{Hvad er tykkelsen af foliet og backing?}
-Det resterende vil passere videre gennem beamline, hvor det
-igen vil passere gennem en detektor, for at ende i en Faraday cup.
-
-Detektorsystemet består af to dobbel siddet silicium strip detektorer (DSSSD), som fungerer på samme
-måde, som almindelige fasstofdetektorer. Fordelen er opdelingen af forsiden og bagsiden i et antal
-områder kaldet strips. Dermed er det muligt at bestemme både vinkel og energi af
-partiklerne. Bagsiden er opdelt i 32 radiale slices, som benævnes sektorer. Forsiden er derimod
-opdelt i en række ringe, der hver er 886\um tykke, med et 100\um isolerende område mellem hver.
-
-Den første detektor beamet passerer igennem kaldes upstream. Denne udspænder vinklerne fra
-$141\degree$ til $165\degree$ målt fra beamets retning. Den anden benævnes med downstream og den
-udspænder fra $15\degree$ til $40\degree$.
-
-
+Det resterende vil passere videre gennem \beamline, hvor det igen vil passere gennem en detektor, for
+at ende i en Faradaybæger.
 \begin{figure}[h]
   \centering
-  \fxfatal{Skematisk tegning af opstillingen mangler.}
-  %\includegraphics{}
-  \caption{Skematisk tegning af opstillingen}
+  \fxfatal{Detektorerne skal lige tegnes på det rette sted.}
+  \includegraphics[width=0.7\columnwidth]{Opstilling}
+  \caption{Skematisk tegning af opstillingen. Figuren er lånt fra \cite{Knudsen}.}
   \label{fig:opstilling}
 \end{figure}
+
+Detektorsystemet består af to dobbel siddet silicium strip detektorer (DSSSD) af typen S3 fra Micron
+Semiconductors Limited.  \fxfatal{Skal her være en reference til datablad eller lignende?}  Disse
+fungerer på samme måde som almindelige fasstofdetektorer, og en skematisk tegning af detektoren ses
+på \cref{fig:S3}.  Fordelen ved disse detektorer er opdelingen af forsiden og bagsiden i et antal
+områder kaldet strips. Dermed er det muligt at bestemme et positionsfølsomt spektrum af
+partiklerne. Bagsiden er opdelt i 32 radiale sektorer. Forsiden er derimod
+opdelt i en række ringe, der hver er 886\um tykke, adskilt af et 100\um isolerende område.
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[width=0.5\columnwidth]{S3}
+  \caption{Skematisk tegning af S3 detektoren, hvor de 24 ringe og 32 sektorer ses. Bemærk at
+  ringene og sektorerne er placeret på hhv. forsiden og bagsiden af detektoren.}
+  \label{fig:S3}
+\end{figure}
+
+Den første detektor strålen passerer igennem vil blive omtalt som upstream, og den udspænder
+polarvinklerne, målt ifht. \beamline, fra $141\degree$ til $165\degree$. Den anden detektor benævnes
+med downstream og den udspænder fra $15\degree$ til $40\degree$.
+
+\fxfatal{Indfør detektornummerering!}
+På begge sidder var der endvidere placeret to W1 DSSSD detektorer også fra Micron. Disse dektorer er
+firkantede og det aktive område måler ${\SI{49.5}{\mm} \times \SI{49.5}{\mm}}$. De to sider er
+opdelt i 16 strips af \SI{3000.0}{\um} adskilt af et \SI{0.1}{\mm} isolerende område. Stripsne på
+forsiden og bagsiden er placeret vinkelret i forhold til hinanden, hvormed disse dektorer også er
+positionsfølsomme i to dimensioner.
+%\footnote{Datablade for begge detektortyper kan findes på Microns hjemmeside:  \url{micronsemiconductor.co.uk}}
+
+Detektorerne er forbundet til en forforstærker, der er placeret tæt ved for at undgå støj. Signallet
+fra disse er ført videre til en analog til digital konverter (ADK) som til sidst er ført til
+computeren. Endvidere blev signalerne fra S3'erne ført ind i et logisk kredsløb. Udgangssignallet
+fra denne blev brugt som triggersignal til ADK'erne. Det logiske kredsløb havde to indstillinger; \lAND
+og \lOR. Er den indstillet på \lAND, så skal der være signal i begge detektorer før der kommer et udgangssignal,
+hvor der ved \lOR kun skal være signal i den ene. Dette gør det muligt at grovsortere, således at de
+fleste Rutherfordspredte protoner ikke medtages i det endelige datasæt.
