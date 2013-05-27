@@ -1,0 +1,61 @@
+ For trippelkoincidenserne har al kinematisk information været tilgængelig, hvorimod
+ dobbeltkoincidenserne bygger på antagelsen om et rent spektrum. Dermed må udgangspunktet være at
+ trippelkoincidensspektret er det rigtige. 
+
+ På \cref{fig:aSingleSpectrum} ses spektret for de enkelte detektorer for de hændelse, hvor der er
+ detekteret to eller flere partikler. Disse spektrer stemmer også overens med hypotesen om
+ sekventielt henfald med tydelige $\alpha_{0}$ og $\alpha_{1}$. Begge disse toppe ligger ved energier, hvor der
+ ikke kommer forstyrrelser pga. proton beamet, så derfor må det antages at disse skyldes
+ $\alpha$-partikler. På baggrund af dette vil jeg argumenterer for, at det samlede spektre underlagt
+ koincidensbetigelserne skal stemme overens for de høje energier med de enkelte spektre på
+ \cref{fig:aSingleSpectrum}.
+
+ \begin{figure}[b!]
+   \centering
+   \subbottom[Detektor 1]{\includegraphics[width=0.42\columnwidth]{1077-spec0}}%
+   \hspace{1cm}
+   \subbottom[Detektor 2]{\includegraphics[width=0.42\columnwidth]{1077-spec1}}%
+   \caption{Energispektrum for detektor 1 og 2 for hændelser med to eller flere partikler.}
+   \label{fig:aSingleSpectrum}
+ \end{figure}
+
+ \begin{figure}[b]
+   \centering
+   \ContinuedFloat
+   \subbottom[Detektor 3]{\includegraphics[width=0.42\columnwidth]{1077-spec2}}%
+   \hspace{1cm}
+   \subbottom[Detektor 4]{\includegraphics[width=0.42\columnwidth]{1077-spec3}}%
+   \caption{Energispektrum for detektor 3 og 4 for hændelser med to eller flere partikler.}
+ \end{figure}
+
+
+ Endvidere så er $\alpha$-henfald kraftigt energiafhængige \cite[s. 236]{Martin}, og $\alpha_{0}$ må derfor
+ forventes derfor at være den primære henfaldskanal. \fxfatal{Kan man sige det så groft?}
+ I forhold til hvor kraftigt $\alpha_{1}$-toppen dominere på \cref{fig:alphaSpectrum}a, så taler dette
+ kraftigt imod at dobbelkoincidensspektret svarer til det sande spektrum.
+
+ Spektrene på \cref{fig:aSingleSpectrum} forklarer endvidere, hvorfor fordelingen af de sekundære
+ $\alpha$-partikler ikke træder tydeligere frem. Dette skyldes den store mængde resonanser i den lave ende
+ af de enkelte spektre. Disse skyldes at prøven indeholder andre elementer end kulstof og beryllium,
+ hvilket giver anledning til Rutherfordspredning ved andre energier. Dette problem kan afhjælpes ved
+ at benytte en renere prøve, hvor så Rutherfordtoppen fra beryllium skæres væk. 
+
+ \section{Konklusion}
+ \label{sec:sekv-konklusion}
+
+ Det kan konkluderes, at spektrene for de enkelte detektorer er i overensstemmelse med hypotesen om
+ sekventielt henfald. Endvidere er det også vist at det, med passende koincidensbetingelser, er
+ muligt at ekstrahere et samlet energispektrum, og at dette også er i overensstemmelse med
+ sekventielt henfald. Det må dog noteres, at de optagne spektre ikke er rene nok til at
+ dobbeltkoincidenserne kan benyttes. 
+
+
+
+
+
+
+
+
+
+
+

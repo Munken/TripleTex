@@ -37,14 +37,13 @@
 \usepackage{multirow}
 \usepackage{xspace}
 \usepackage[caption=false]{subfig}
-\let\subtop\subfloat
+\let\subbottom\subfloat
 
 \usepackage[flushleft]{threeparttable}
 \usepackage[draft]{fixme}
 \renewcommand\fxdanishfatalname{Fatal}
 
-\usepackage{natbib}
-
+\usepackage[square,sort,comma,numbers]{natbib}
 
 
 %%%% Forside stuff
@@ -65,7 +64,8 @@
 \sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
 \newcommand\stext[1]{\an{\scshape#1}}
 \pagestyle{simple} %Giver tom footer og sidetal i header
-
+\input{Bachelor-chapterstyle}
+%\chapterstyle{tandh}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Costumized math functions %%%%%%%%%%%%%%%%%%
@@ -104,11 +104,12 @@
 
 \DeclareSIUnit\um{\micro\meter}
 \DeclareSIUnit\MV{\mega\V}
+\DeclareSIUnit\ub{\micro\barn}
 
 
 %%%% Små ord
-\newcommand{\beamline}{strålelinien}
-\newcommand{\target}{target}
+\newcommand{\beamline}{strålerøret\xspace}
+\newcommand{\target}{strålemål\xspace}
 \newcommand{\lAND}{\texttt{OG}\xspace}
 \newcommand{\lOR}{\texttt{ELLER}\xspace}
 
@@ -143,7 +144,7 @@
 \input{Bachelor-konklusion}
 
 \clearpage
-\bibliographystyle{plain}
+\bibliographystyle{dk-plain-etal}
 \bibliography{Bachelor}
 
 \end{document}

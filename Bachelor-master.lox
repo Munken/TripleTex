@@ -1,11 +1,17 @@
 \contentsline {fixme}{Fatal: Not done yet}{2}{Doc-Start}
-\contentsline {fixme}{Fatal: Hvad er tykkelsen af foliet og backing?}{1}{chapter.2}
 \contentsline {fixme}{Fatal: Detektorerne skal lige tegnes p\IeC {\r a} det rette sted.}{1}{figure.caption.3}
-\contentsline {fixme}{Fatal: Skal her v\IeC {\ae }re en reference til datablad eller lignende?}{1}{figure.caption.3}
 \contentsline {fixme}{Fatal: Indf\IeC {\o }r detektornummerering!}{1}{figure.caption.4}
-\contentsline {fixme}{Note: Overvej denne overskrift}{4}{section.4.2}
-\contentsline {fixme}{Fatal: Indf\IeC {\o }r prim\IeC {\ae }re og sekund\IeC {\ae }re henfald}{5}{section.6.1}
-\contentsline {fixme}{Fatal: S\IeC {\o }rg for at denne reference giver mening.}{7}{figure.caption.11}
-\contentsline {fixme}{Fatal: Dette skal gennemt\IeC {\ae }nkes.}{8}{figure.caption.11}
-\contentsline {fixme}{Fatal: Tegne en dalitz trekant.}{10}{figure.caption.12}
-\contentsline {fixme}{Fatal: Her skal findes kilder}{10}{section*.13}
+\contentsline {fixme}{Fatal: Her mangler en tegning af W1-detektoren}{2}{figure.caption.4}
+\contentsline {fixme}{Fatal: Hvor pr\IeC {\ae }cis er disse tal?}{4}{section.4.1}
+\contentsline {fixme}{Fatal: Dette skal uddybes.}{5}{equation.4.2.2}
+\contentsline {fixme}{Fatal: Her skal g\IeC {\o }res rede for de generelle overvejelser mht. 2 og 3 partikel henfald og det specielle ved sekventielle henfald. }{5}{chapter.6}
+\contentsline {fixme}{Fatal: Becker figur.}{5}{section.6.1}
+\contentsline {fixme}{Fatal: N\IeC {\ae }vn at middelv\IeC {\ae }rdien benyttes.}{7}{equation.6.1.7}
+\contentsline {fixme}{Fatal: Her skal dalitz afsnittet inds\IeC {\ae }ttes. }{7}{equation.6.1.8}
+\contentsline {fixme}{Fatal: Snak om program udvikling, ROOT mm.}{7}{section.6.2}
+\contentsline {fixme}{Fatal: Flyt til teori afsnit og uddyb. Se Hans' tegning. }{8}{figure.caption.11}
+\contentsline {fixme}{Fatal: Forklar sammenh\IeC {\ae }ng ml. beamenergien og exitationsenergien af \Carb }{8}{figure.caption.11}
+\contentsline {fixme}{Note: Fordelingen afh\IeC {\ae }nger ogs\IeC {\r a} af energien af $\alpha $, som varierer henover toppen. }{9}{figure.caption.11}
+\contentsline {fixme}{Fatal: S\IeC {\o }rg for at denne reference giver mening.}{9}{figure.caption.11}
+\contentsline {fixme}{Fatal: Dette skal gennemt\IeC {\ae }nkes.}{9}{figure.caption.11}
+\contentsline {fixme}{Fatal: Hans \IeC {\o }nsker kombination af \cref {fig:dalitz-0} og \ref {fig:dalitz-triangle}. }{12}{figure.caption.14}
