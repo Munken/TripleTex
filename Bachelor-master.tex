@@ -8,7 +8,7 @@
 % dansk, papirtypen til A4, sætter dokument til lige store højre og
 % venstre margen, laver to søjler og siger at vi gerne vil lave en
 % artikel, sætter skriftstørrelse til 9pt.
-\documentclass[danish,a4paper,twoside,11pt]{memoir}
+\documentclass[danish,a4paper,twoside,11pt,draft]{memoir}
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
@@ -48,6 +48,10 @@
 \renewcommand\fxdanishfatalname{Fatal}
 
 \usepackage[square,sort,comma,numbers]{natbib}
+
+\usepackage{git-info}
+\usepackage{stringstrings}
+
 
 
 %%%% Forside stuff
@@ -124,7 +128,10 @@
 \newcommand{\lAND}{\texttt{OG}\xspace}
 \newcommand{\lOR}{\texttt{ELLER}\xspace}
 
-
+%%%% Git stuff
+\gitNewDateFormat{timeonly}{#4:#5}
+\newcommand{\gitid}{\substring{\gitinfo{@head}{commit}}{1}{7}\xspace}
+\newcommand{\gittime}{\gitinfo{@head}{dt@today}{} \gitinfo{@head}{dt@timeonly}\xspace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
