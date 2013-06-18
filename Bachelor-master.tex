@@ -8,8 +8,8 @@
 % dansk, papirtypen til A4, sætter dokument til lige store højre og
 % venstre margen, laver to søjler og siger at vi gerne vil lave en
 % artikel, sætter skriftstørrelse til 9pt.
-\documentclass[danish,a4paper,twoside, 11pt]{memoir}
-%\setsecnumdepth{subsection}
+\documentclass[danish,a4paper,twoside,11pt]{memoir}
+\setsecnumdepth{subsection}
 \settocdepth{subsection}
 
 \usepackage[danish]{babel} %Giver mulighed for dansk orddeling. Slet
@@ -33,7 +33,8 @@
 %\usepackage[hidelinks=true]{hyperref}
 \usepackage{microtype} % Pakke der proever at fikse badbox
 % problemer. Kun kompatibel med pdflatex.
-
+%\renewcommand\ttdefault{txtt}
+\usepackage[scaled]{luximono}
 
 \usepackage{suffix}
 \usepackage{wasysym}
@@ -56,6 +57,7 @@
 
 %\usepackage{autonum}
 \usepackage[hidelinks]{hyperref}
+\usepackage{breakurl}
 \usepackage{cleveref}
 
 
@@ -83,7 +85,7 @@
 \newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial #2^3}}
 \newcommand{\mvec}[1]{\bm{#1}}
 
-\graphicspath{{./Figures/}}
+\graphicspath{{./Figures/}{./Figures/Dalitz/}{./Figures/AlphaSpec/}}
 \setkeys{Gin}{width=0.9\columnwidth}
 
 
@@ -93,10 +95,15 @@
 
 %Be-8
 \newcommand\Be{\ce{^{8}Be}\xspace}
-\WithSuffix\newcommand\Be*{\ce{^{8}Be^*}\xspace}
+\WithSuffix\newcommand\Be*{\ensuremath{\ce{^{8}Be^*}}\xspace}
+
+% Be-8
+\newcommand\Bor{\ce{^{11}B}\xspace}
+\WithSuffix\newcommand\Bor*{\ensuremath{\ce{^{11}B^*}}\xspace}
+
 % C-12
 \newcommand\Carb{\ce{^{12}C}\xspace}
-\WithSuffix\newcommand\Carb*{\ce{^{12}C^*}\xspace}
+\WithSuffix\newcommand\Carb*{\ensuremath{\ce{^{12}C^*}}\xspace}
 
 %%% Siunitx
 \sisetup{separate-uncertainty=true,
@@ -108,11 +115,12 @@
 \DeclareSIUnit\um{\micro\meter}
 \DeclareSIUnit\MV{\mega\V}
 \DeclareSIUnit\ub{\micro\barn}
+\DeclareSIUnit\mb{\milli\barn}
 
 
 %%%% Små ord
 \newcommand{\beamline}{strålerøret\xspace}
-\newcommand{\target}{strålemål\xspace}
+\newcommand{\target}{folie\xspace}
 \newcommand{\lAND}{\texttt{OG}\xspace}
 \newcommand{\lOR}{\texttt{ELLER}\xspace}
 
@@ -124,7 +132,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
-
+% \includeonly{%
+% %  Bachelor-abstract,
+% %  Bachelor-indledning,
+% %  Bachelor-opstilling,
+% %  Bachelor-eksparb,
+%   Bachelor-kalibrering,
+% %  Bachelor-rutherford,
+% %  Bachelor-henfald,
+% %  Bachelor-konklusion
+% }
 \begin{document}
 
 
@@ -132,22 +149,23 @@
 %\input{Bachelor-dedikation}     
 \frontmatter
 
-\tableofcontents
-\newpage
-\listoffixmes
+\include{Bachelor-abstract}
+\cleardoublepage
+
+\tableofcontents*
+%\listoffixmes
 
 \mainmatter
-\input{Bachelor-indledning}
-\input{Bachelor-opstilling}
-\input{Bachelor-eksparb}
-\input{Bachelor-kalibrering}
-\input{Bachelor-rutherford}
-\input{Bachelor-sekventiel}
-\input{Bachelor-dalitz}
-\input{Bachelor-konklusion}
+\include{Bachelor-indledning}
+\include{Bachelor-opstilling}
+\include{Bachelor-eksparb}
+\include{Bachelor-kalibrering}
+\include{Bachelor-rutherford}
+\include{Bachelor-henfald}
+\include{Bachelor-konklusion}
 
 \clearpage
-\bibliographystyle{dk-plain-etal}
+\bibliographystyle{dk-unsrt}
 \bibliography{Bachelor}
 
 \end{document}

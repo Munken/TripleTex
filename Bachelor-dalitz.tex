@@ -1,58 +1,82 @@
-\chapter{Dalitz plots}
-\label{cha:dalitz-plots}
+\subsection{Dalitzplots}
+\label{sec:dalitz-plots}
 
-%\input{Bachelor-dalitz-teori}
-
-\section{Data og databehandling}
-\label{sec:dalitz-data}
-
-Databehandlingen af dette er stort set tilsvarende den i \cref{sec:sek-data}. Eneste forskel er, at når
-der blev fundet en koincidens, så blev Dalitzkoordinaterne udregnet. Hvis punktet lå uden for den
-indskrevne cirkel, så blev det smidt væk.
-
-\subsection{\SI{17.8}{\MeV}}
-\label{sec:dalitz-178}
-
-
-På \cref{fig:dalitz-1077} ses Dalitzplottet for trippel-$\alpha$ henfaldet fra den exciterede tilstand
-ved \SI{17.8}{\MeV} i kulstof. %Som forventet er plotet symmetrisk. 
-
-Båndene svarende til $\alpha_{0}$ ses ude ved kanten af cirklen, hvilket stemmer overens med, at de er
-det meste energirige partikler i henfaldet. Som forventet er det smalle bånd svarende til at
-berylliumresonansen er meget lang livet. Lidt under $\alpha_{0}$ ses også en struktur i dobbeltkoincidenserne,
-der ligner lidt en klo. Dette skyldes tilfældige koincidenser, formentlig på grund af beamet. I
-Dalitzplottet genfindes også den tidligere observerede tendens med stærk undertrykkelse af $\alpha_{0}$
-når dobbeltkoincidenserne benyttes. 
-
-\begin{figure}[t]
+\begin{figure}[ht!]
   \centering
-  \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.46\columnwidth]{1077-Dalitz-D}}%
+  \vspace{-0.3cm}
+  \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1077-Dalitz-D}}%
   \hfill
-  \subbottom[Trippelkoincidenser]{\includegraphics[width=0.46\columnwidth]{1077-Dalitz-T}}%
+  \subbottom[Trippelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1077-Dalitz-T}}%
   \caption{Dalitzplot for $0^{+}$ tilstanden ved \SI{17.8}{\MeV} i kulstof.}
   \label{fig:dalitz-1077}
+  % 
+  % 
+  % 
+  \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1108-Dalitz-D}}%
+  \hfill
+  \subbottom[Trippelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1108-Dalitz-T}}%
+  \caption{Dalitzplot for $1^{+}$ tilstanden ved \SI{18.2}{\MeV} i kulstof.}
+  \label{fig:dalitz-1108}
+  % 
+  % 
+  % 
+  \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1128-Dalitz-D}}%
+  \hfill
+  \subbottom[Trippelkoincidenser]{\includegraphics[width=0.42\columnwidth]{1128-Dalitz-T}}%
+  \caption{Dalitzplot for $3^{-}$ tilstanden ved \SI{18.5}{\MeV} i kulstof.}
+  \label{fig:dalitz-1128}
+  \vspace{-1.3cm}
 \end{figure}
 
-Ved lidt lavere energi ses båndene for $\alpha_{1}$. Toppene ude ved sidderne og i bunden har den samme
-struktur i de to plots, selv om toppene er mere fremtrædende når dobbeltkoincidenserne
-benyttes. Dette skyldes, som tidligere diskuteret, at disse er bedre til at detektere $\alpha_{1}$. I
-området mellem toppene er strukturen også den samme. Dobbelkoincidenserne har dog fordelen ved den
-øgede datamængde, som får dens strukture til at adskille sig bedre fra baggrunden. Der er dog ingen
-tvivl om at bredden af $\alpha_{1}$-båndet er væsentligt større end $\alpha_{0}$-båndet. 
+Dalitzplots for de tre tilstande, hvis spektrum blev fundet i foregående afsnit, ses på figurerne
+\ref{fig:dalitz-1077} til \ref{fig:dalitz-1128}. Det bemærkes, at for trippelkoincidenserne af
+\SI{18.5}{\MeV} tilstanden er plottet skåret af ved 300 tællinger, da det ellers ikke var muligt at
+se de detaljerede stukturer.
 
-Hvilken tilstand er så blevet populeret? Ud fra \cref{fig:dalitz-0} kan de to tilstande med naturlig
-paritet $1^{-}$ og $3^{-}$ udelukkes, da disse kræver, at der er nulpunkter ved de steder
-$\alpha_{1}$-båndet har maksima. Alle tilstandene med unaturlig paritet kræver at fordelingen er nul
-langs hele randen, hvilket er hvor maksima for både $\alpha_{0}$- og $\alpha_{1}$-båndet befinder sig. Ud over
-dette, stiller de også visse andre krav, som ikke heller ikke er opfyldt.
+For det første ses det tydeligt, at data ikke er konsistent med direkte henfald til tre
+$\alpha$-partikler.
+
+Generelt gælder for alle Dalitzplots, at der er tre bånd ude ved kanten af cirklen. Disse
+stammer fra de mest energirige partikler i henfaldet (jvf. \cref{fig:dalitz-triangle}) og må derfor
+være $\alpha_{0}$, hvilket stemmer overens med bredden af båndet, da grundtilstanden af \Be er meget
+smal. Lidt under $\alpha_{0}$ ses små strukturer på \cref{fig:dalitz-1077}a og
+\ref{fig:dalitz-1128}a. Strukturerne stammer fra den observerede støj i dobbelkoincidenserne på
+\cref{fig:alpha-spec}a og \ref{fig:alpha-spec}e. Som forventet fra \cref{sec:energispektrum}
+forekommer $\alpha_{0}$ båndet også i både \ref{fig:dalitz-1108}a og b, hvilket igen indikerer, at der
+ikke kan være tale om en $1^{+}$ tilstand.
+
+Ved lidt lavere energi ses $\alpha_{1}$ båndene. For de to laveste energier har toppene i siderne og 
+bunden samme struktur på trods af, at toppene er vanskeligere at skille fra baggrunden i
+trippelkoincidensplottet. Der hersker dog ingen tvivl om, at bredden af $\alpha_{1}$ båndet er væsentligt
+større end $\alpha_{0}$ båndet samt at bredden af $3^{-}$ tilstanden er større end $0^{+}$
+tilstanden. De tre toppe er desuden forbundet af linier, som buer indad, hvor det lader til, at
+liniernes krumning stiger med energien.
+
+En fuldstændig forståelse af plottet ville kræve en kvantemekanisk tre-partikel model, hvilket
+stadig er et aktivt forskningsområde. Derfor er det ikke muligt at redegøre for plottes udseende ud over
+båndstrukturen.
+
+
+Ser man på \cref{fig:dalitz-1077}, kan man ud fra \cref{fig:dalitz-0} udelukke de to tilstande
+med naturlig paritet $1^{-}$ og $3^{-}$, da disse kræver, at der er nulpunkter ved de steder, hvor
+$\alpha_{1}$-båndet har maksima. Henfald til grundtilstanden af \Be er desuden forbudt for alle
+tilstande med unaturlig paritet, hvorved de også kan udelukkes.
 
 Dermed er antallet af kandidater reduceret til $0^{+}$ og $2^{+}$, for hvilke symmetrien stiller
 samme krav. Der er desuden den mulighed, at det kan være en tilstand, som ikke er tabuleret i
-\cite{Fedorov}. En videre analyse vil kræve simuleringer, hvilket er uden for tidsrammen af dette
-projekt. Heldigvis er tilstanden tabuleret og ifølge \cite{States} er den
-populerede tilstand en $0^{+}$ tilstand, hvilket stemmer smukt overens med resultaterne.
+\cite{Fedorov}. 
 
+En tilsvarende analyse med samme result kan udføres for de to andre tilstande. For den påståede
+$1^{+}$ tilstand indikerer det, at her i stedet er tale om en $0^{+}$ eller $2^{+}$ tilstand. Denne
+konklusion er problematisk, da \cite{States} påstår, at tilstanden ved \SI{18.5}{\MeV} er en
+$3^{-}$.  Derfor er det nødvendigt med yderligere analyse før dette kan afgøres endeligt, da
+analysen, i sin nuværende form, også har mangler, som det ses ved cirkelranden i området omkring
+$\alpha_{1}$ båndet. Det kan skyldes en bagvedliggende tilstand eller i mindre grad usikkerheder i
+placeringen af detektorerne og kalibreringen.
 
+% En videre analyse vil kræve simuleringer, hvilket er uden for tidsrammen af dette
+% projekt. Heldigvis er tilstanden tabuleret og ifølge \cite{States} er den populerede tilstand en
+% $0^{+}$ tilstand, hvilket stemmer smukt overens med resultaterne.
 
 
 

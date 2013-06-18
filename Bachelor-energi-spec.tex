@@ -1,99 +1,130 @@
 \subsection{Energispektrum}
 \label{sec:energispektrum}
 
+% \begin{figure}[h!]
+%   \centering
+%   \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.47\columnwidth]{1077-spec-D-mix}}%
+%   \hfill
+%   \subbottom[Trippelkoincidenser]{\includegraphics[width=0.47\columnwidth]{1077-spec-T}}%
+%   \caption{Antal tællinger som funktion af energien for henfald fra \SI{17.8}{\MeV}. Den smalle
+%     $\alpha_{0}$ og den brede $\alpha_{1}$ top ses tydeligt.}
+%   \label{fig:alphaSpectrum}
+% \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \subbottom[Dobbelkoincidenser]{\includegraphics[width=0.46\columnwidth]{1077-spec-D}}%
+  \vspace{-0.3cm}
+  \subbottom[Dobbelkoincidenser - \SI{17.8}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1077-spec-D-mix}}%
   \hfill
-  \subbottom[Trippelkoincidenser]{\includegraphics[width=0.46\columnwidth]{1077-spec-T}}%
-  \caption{Antal tællinger som funktion af energien for henfald fra \SI{17.8}{\MeV}. Den smalle
-    $\alpha_{0}$ og den brede $\alpha_{1}$ top ses tydeligt. Energierne ml. 1400 og 1660\keV er ikke medtaget
-    i dobbelkoincidenser. Tilsvarende er 1460 og 1560\keV udeladt for trippelkoincidenserne.}
-  \label{fig:alphaSpectrum}
+  \subbottom[Trippelkoincidenser-
+  \SI{17.8}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1077-spec-T-mix}}%
+  \\
+%  \caption{Antal tællinger som funktion af energien for \SI{17.8}{\MeV} tilstanden.}
+%  \label{fig:alpha-1077}
+  %
+  %
+  %
+  \subbottom[Dobbelkoincidenser - \SI{18.2}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1108-spec-D-mix}}%
+  \hfill
+  \subbottom[Trippelkoincidenser - \SI{18.2}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1108-spec-T-mix}}%
+  \\
+  % \caption{Antal tællinger som funktion af energien for \SI{18.2}{\MeV} tilstanden.}
+%  \label{fig:alpha-1108}
+  %
+  %
+  %
+  \subbottom[Dobbelkoincidenser - \SI{18.5}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1128-spec-D-mix}}%
+  \hfill
+  \subbottom[Trippelkoincidenser - \SI{18.5}{\MeV}]{\includegraphics[width=0.45\columnwidth]{1128-spec-T-mix}}%
+  \caption{Antal tællinger som funktion af energien i CM. \Carb excitationsenergien er angivet under de
+    enkelte billder. Den røde kurve angiver spektret for $\alpha_{0}$ og dennes sekundære partikler. Den
+    blå kurve er det tilsvarende for $\alpha_{1}$.}
+  \label{fig:alpha-spec}
+  \vspace{-1.3cm}
 \end{figure}
 
-På \cref{fig:alphaSpectrum} ses alphaspektret i CM for hhv. dobbelt- og trippelkoincidenser, hvor
-der er benyttet 2\MeV protoner. Dette populerer en $0^{+}$ tilstand i \Carb med excitations
-energi  \SI{17.8}{\MeV}. Idet $\alpha$-henfald bevarer både impulsmoment og paritet, kan henfaldet
-foregå både til grundtilstanden og den exciterede tilstand i beryllium. \fxfatal{Flyt til teori
-  afsnit og uddyb. Se Hans' tegning. }
-\fxfatal{Forklar sammenhæng ml. beamenergien og exitationsenergien af \Carb}
+På \cref{fig:alpha-spec} ses $\alpha$-spektret i CM for henfald til grundtilstanden og første exciterede
+tilstand for hhv. dobbel- og trippelkoincidenser, hvor der er benyttet 2, \num{2.37} og
+\SI{2.65}{\MeV} protoner. Ifølge \cite{States} populerer dette hhv.  en $0^{+}$ isospin 1 tilstand i
+\Carb med excitationsenergi \SI{17.8}{\MeV}, en $1^{+}$ isospin 0 tilstand ved \SI{18.2}{\MeV} og en
+$3^{-}$ isospin 1 ved \SI{18.5}{\MeV}.
 
-Først og fremmest skal det nævnes, at hvis energien af en af de detekterede $\alpha$-partikler lå mellem
-1400 og 1660\keV, så er disse ikke medtaget i dobbelkoincidenserne, da dette gav anledning til
-støj. Det samme gør sig gældende for trippelkoincidenserne mellem 1460 og 1560\keV.
+% For dobbelkoincidenserne består den blå kurve kun de hændelser, hvor en af partiklerne ikke er en
+% $\alpha_{0}$ svarende til $\alpha_{1}$ spektret. Den røde kurve er så fundet ved at trække den blå fra det
+% samlede spektrum for dermed at opnå $\alpha_{0}$ spektret. Tilsvarende er den røde kurve for
+% trippelkoincidenserne de hændelser hvor der ikke var nogen $\alpha_{1}$. Den blå kurve angiver her det
+% samlede spektrum 
 
-I toppen af begge spektrer ses tydeligt en smal top omkring 7\MeV. Under denne ligger der en bred
-Breit-Wigner lignende top centreret omkring 5\MeV. Disse toppe stemmer fint overens, både
-mht. bredde og energi, med hvad det forventes for $\alpha_{0}$ og $\alpha_{1}$. $\alpha_{1}$-toppen er dog ikke
-perfekt Breit-Wigner fordelt, hvilket bla. kan forklares ved, at der forekommer en bidrag fra de 
-sekundære partikler.
-\fxnote{Fordelingen afhænger også af energien af $\alpha$, som varierer henover toppen. }
-Fordelingen af disse er det dog ikke muligt at sige noget videre meningsfuldt
-om. Dette skyldes bidrag fra protonstrålen jvf. diskussion i \cref{cha:rutherford}.
-\fxfatal{Sørg for at denne reference giver mening.}
+I alle spektrer ses tydeligt en smal top omkring 7\MeV. Under denne ligger en bred Breit-Wigner
+lignende top centreret omkring 5\MeV. Disse toppe stemmer fint overens med, hvad det forventes for
+$\alpha_{0}$ og $\alpha_{1}$, i forhold til, hvad der forventes for bredde og energi.
+$\alpha_{1}$-toppen er dog ikke perfekt Breit-Wigner fordelt, hvilket skyldes, at
+tunneleringssandsynligheden afhænger kraftigt af energien. Endvidere er der også et lille bidrag til
+asymmetrien fra de sekundære partikler. Desuden ses det, at fordelingen af de sekundære partikler
+fra $\alpha_{0}$-henfald har samme form i alle tre trippelkoincidensspektre. Tilsvarende gør sig gældende
+for de sekundære partikler fra $\alpha_{1}$ i dobbelkoincidensspektrerne.
+
+Figurerne viser også både styrken og svagheden ved dobbelkoincidenserne. De bidrager med rigtig
+meget data, men samtidig er der også større chance for støj fra protonstrålen, som det tydeligt ses
+på \cref{fig:alpha-spec}e og mindre tydeligt på \cref{fig:alpha-spec}a. Støjen er her placeret ved
+samme energi som \cref{eq:rutherUdCM} forudsiger.
 
 De målte spektre er dermed i overenstemmelse med hypotesen om sekventielt henfald til tre
-$\alpha$-partikler via \Be. Det essentiele spørgsmål er, om det er muligt at stole på de to
-spektre.
+$\alpha$-partikler via \Be. Endvidere må det konkluderes, at alle tre tilstande indeholder en isospin 0
+komponent, da henfald via tre $\alpha$-partikler ellers ikke ville være muligt. 
 
-Ud fra diskutionen i \cref{sec:sekv-kinematik} især med \cref{eq:Ealpha2} og \cref{eq:sekv-vinkel}
-i mente, så ses at energien til rådighed for de sekundære $\alpha$-partikler i den transversale retning
-afhænger af Q-værdien af det sekundære henfald.
+De to midterste paneler på \cref{fig:alpha-spec} viser spektret fra en tilstand med unaturlig paritet. I
+\cref{sec:pop-beryllium} blev det udledt, at en tilstand med unaturlig paritet ikke kan henfalde til
+grundtilstanden af \Be. Ifølge \cite{States} har tilstanden isospin 0 og $\alpha$-henfald fra denne vil
+derfor være mere hyppige end fra de omkringliggende isospin 1 tilstande. Dette er dog langt fra
+tilfældet, idet $\alpha_{0}$-henfald udgør en væsentlig andel både af dobbel- og
+trippelkoincidensspektret. Data er dermed ikke i overenstemmelse med en $1^{+}$ isospin 1 tilstand
+ved \SI{18.2}{\MeV} i \Carb, hvilket stemmer fint overens med, at \cite{States} ikke er sikre på
+deres konklusion.
 
-Et henfald fra grundtilstanden af beryllium til tre $\alpha$-partikler frigører cirka 90\keV, hvorimod et
-henfald fra den exciterede tilstand frigører omkring 3\MeV. Dette betyder, at den transversale
-komposant af hastigheden af de sekundære $\alpha$-partikler kan være mange gange større, hvilket betyder
-at vinklen mellem de to sekundære $\alpha$-partikler kan være tilsvarende større. Benytter man
-\cref{eq:sekv-vinkel}, så er den maksimale vinkel hhv. \SI{19}{\degree} og \SI{86}{\degree} for
-henfald til grundtilstanden og den exciterede tilstand.
 
-\fxfatal{Dette skal gennemtænkes.}
-Med det benyttede dektorsystem er der ikke fuld dækning i alle retninger, men fordi detektorerne er
-placeret symmetrisk, så er detektorerne mere effektive til at detektere hændelser med lille vinkel
-mellem de sekundære $\alpha$-partikler, da disse to ofte ville ramme samme detektor. Derimod er sandsynligheden
-større for at kun to $\alpha$-partikler bliver detekteret, hvis vinklen er større, da der så er mulighed
-for at en af partiklerne slet ikke detekteres.
+\subsubsection{Eksperimentelle detektoreffekter}
+\label{sec:data-detek}
 
-Hvad betyder dette for koincidensspektrene? Effekten er tydeligst ved dobbeltkoincidenserne. Her
-undertrykkes $\alpha_{0}$ kraftigst i forhold til $\alpha_{1}$. Dette skyldes, som beskrevet ovenfor, at der
-vil være forholdvis flere hændelser, der skyldes henfald til den exciterede tilstand, hvor \emph{kun} to
-partikler detekteres. Ved specifik at vælge disse hændelser undertrykkes $\alpha_{0}$-toppen.
+Forholdet mellem de to toppe i dobbelkoincidensspektrene stemmer fint overens med det forventede med
+en kraftig undertrykkelse af $\alpha_{0}$ toppen.
 
-Hvorfor er $\alpha_{1}$ så ikke undertrykt i trippelkoincidensspektret? Her er der to effekter, som
-spiller ind. For det første er vinklen mellem detektorerne i størrelsesordnen 20\degree, hvilket
-betyder, at der er en risiko for at begge sekundære partikler for $\alpha_{0}$ henfaldet rammer ved siden
-af. Muligheden for større vinkel ved $\alpha_{1}$ henfald betyder også, at der er mulighed for, at
-$\alpha$-partiklerne rammer hver sin detektor. Hvordan disse effekter har indflydelse på spektret er svær
-at afgøre, men generelt er sandsynligheden for dektektere $\alpha_{1}$ tripler mindre end den for
-$\alpha_{0}$. Forklaringen må af den grund være, at der simpelthen foregår flere
-$\alpha_{1}$-henfald. Dette virker umiddelbart mærkeligt idet tunneleringssandsynligheden for
-$\alpha$-henfald afhænger kraftigt af energien. Dette er nært relateret til levetiden og et udtrykt for
-denne er udledt i \cite[s. 236]{Martin}
+For trippelkoincidenserne forventes flest $\alpha_{0}$, hvis tværsnittet af $\alpha_{0}$ og
+$\alpha_{1}$ er den samme.
+
+For spektret på \cref{fig:alpha-spec}b er det modsatte tilfældet. Forklaringen kan være, at
+tværsnittet for $\alpha_{1}$ er væsentligt større. Dette virker umiddelbart modstridende, idet
+tunneleringssandsynligheden for $\alpha$-henfald afhænger kraftigt af
+energien. Tunneleringssandsynligheden er nært relateret til levetiden og et udtrykt er udledt i
+\cite[s. 236]{Martin}
 \begin{equation}
   \label{eq:SStunnel}
   \lambda \propto w(\alpha) e^{-G}, \qquad G \propto \frac{Z}{\sqrt{E_{\alpha}}}.
 \end{equation}
-Umiddelbart taler dette også for henfald med $\alpha_{0}$, men faktoren $w(\alpha)$ skal dog bemærkes. Dette
-er en "fittefaktor" for at få teorien til at passe med de eksperimentelle data. Faktoren angiver
-sandsynlighen for at finde $\alpha$-partiklen inden for kernen. Foltolkningen af
+Umiddelbart taler ovenstående også for henfald med $\alpha_{0}$, men faktoren $w(\alpha)$ skal dog
+bemærkes. Denne er en "fittefaktor"{} for at få teorien til at passe med de eksperimentelle
+data. Faktoren angiver sandsynlighen for at finde $\alpha$-partiklen inden for kernen. Fortolkningen af
 trippelkoincidensspektret er derfor, at det er mere sandsynligt, at $\Carb(\SI{17.8}{\MeV})$ består
-beryllium i en $2^{+}$ tilstand sammen med en $L=2$ $\alpha$-partikel, end $0^{+}$ beryllium sammen med
-en $L=0$ $\alpha$-partikel. Dette stemmer overens med de tabulerede værdier af tværsnittet i
-\cite{States}, der angiver værdierne $\sigma(\alpha_{0}) = \SI{9}{\ub}$ og
-$\sigma(\alpha_{1}) = \SI{25}{\ub}$. Værdien for tværsnittet af $\alpha_{1}$-processen er dog mere usikker.
+\Be i en $2^{+}$ tilstand sammen med en $l=2$ $\alpha$-partikel, end $0^{+}$ \Be sammen med
+en $l=0$ $\alpha$-partikel. Dette stemmer overens med de tabulerede værdier af tværsnittet i
+\cite{States}, der angiver værdierne $\sigma(\alpha_{0}) = \SI{9}{\mb}$ og
+$\sigma(\alpha_{1}) = \SI{25}{\mb}$. Værdien for tværsnittet af $\alpha_{1}$-processen er dog mere usikker.
 
-% Dette skyldes at der er tale om
-% en vinkeldistribution, som kan antage alle værdier mellem 0 og maksimalværdien. Dermed vil der
-% forekomme sekundære partikler fra $\alpha_{1}$ henfald, hvor vinklen er lille. Desuden så er åbningerne
-% imellem detektorerne i størrelsesorden 20\degree målt fra \target. Dermed er det muligt at begge
-% sekundære partikler fra $\alpha_{0}$ ikke detekteres, hvorimod der er en sandsynlig for at de sekundære
-% partikler rammer hver sin detektor, hvis der er tale om $\alpha_{1}$-henfald. Sidst men ikke mindt, skal
-% det nævnes, at de sekundære $\alpha$-partikler bidrager til $\alpha_{1}$ toppen. 
+Tværsnittene for \SI{18.5}{\MeV} tilstanden er hhv.  $\sigma(\alpha_{0}) = \SI{32.4\pm4.8}{\mb}$ og
+$\sigma(\alpha_{1}) = \SI{270\pm40}{\mb}$, men på trods af det, dominerer $\alpha_{1}$-toppen ikke dennes
+trippelkoincidensspektrum. Forholdet mellem tværsnittene stemmer dog ikke overens med de oplyste
+bredder i samme tabel, som er hhv.  $\Gamma_{\alpha_{0}} = \SI{65}{\keV}$ og
+$\Gamma_{\alpha_{1}} = \SI{177}{\keV}$. På baggrund af dette er konklusionen, at de opnåede data ikke er
+konstistente med de oplyste tværsnit i \cite{States}, men at denne tabel heller ikke er
+selvkonsistent.
 
-Den præcise modulering af de to toppe er dermed meget afhængig hvilke koincidensbetingelser der
-stilles, men afhænger også af den specifikke opstilling. For at opnå fuld forståelse af
-fordelingen er det derfor nødvendigt at foretage en simulering. Dette ligger dog uden for tidsrammen
-af dette projekt. Derfor vil dobbelt- og trippelkoincidenserne behandles separat i den videre
-analyse. 
+Ser man på fordelingen af de sekundære partikler fra $\alpha_{0}$ henfaldet, fremgår det tydeligt, at
+fordelingen har én form i alle dobbelkoincidensspektrene og en anden i
+trippelkoincidensspektret. Desuden kan fordelingen af de sekundære partikler fra $\alpha_{1}$ i
+dobbelkoincidenserne nemt identificeres, hvor den i trippelkoincidenserne primært ligner støj.
+
+Det kan konkludere på baggrund af dette afsnit, at den præcise modulering af spektret er meget
+afhængig af koincidensbetingelserne, samt den specifikke opstilling. For de undersøgte tilstande er
+de dog nogenlunde ens. For at opnå fuld forståelse af fordelingen er det
+derfor nødvendigt at foretage en simulering. Dette ligger dog uden for tidsrammen af dette
+projekt. Dobbel- og trippelkoincidenserne vil derfor behandles separat i den videre analyse.

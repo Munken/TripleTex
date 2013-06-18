@@ -1,23 +1,66 @@
 \subsection{Koincidens}
 \label{sec:koincidens}
-For at grovsortere data for protonhændelser, var det logiske kredsløb indstillet til \lAND, således
-at der kun forekom en hændelse, når begge de runde detektorer blevt ramt. Der kan dog stadigvæk
-forekomme tilfældige koincidenser. Arbejdet bestod derfor i at bestemme de koincidenser, som svarede
-til trippel-$\alpha$ henfald.
+For at grovsortere data for protonhændelser var det logiske kredsløb indstillet til \lAND således,
+at der kun forekom en hændelse, når to eller flere detektorer blev ramt. Der kan dog stadigvæk
+forekomme tilfældige koincidenser i data. Arbejdet bestod derfor i at bestemme de
+koincidenser, som svarede til trippel-$\alpha$ henfald.
 
-Hvis der i en given hændelse blev detekteret tre eller flere partikler, så blev der ledt efter
-tripelkoincidenser. Disse kan forekomme på to måder i detektorerne. Enten vil partiklerne have ramt
-hver sin detektor eller også vil to have ramt den samme, hvor den tredje så har ramt en anden
-detektor. Hvis den samlede energi af en sådan triplet er lig med Q-værdien, så er det formentlig et
-sæt af tre matchende $\alpha$-partikler. 
+For at sortere tilfældige fluktuationer i udstyret fra, blev detektioner i forsiden af detektoren
+sammenholdt med dem på bagsiden. Idet detektorerne består af et stykke silicium med kontakter på
+hhv. for- og bagside, så vil en reel partikel blive detekteret i begge sider. En detektion blev kun
+accepteret, hvis der kunne findes en med tilsvarende energi i bagsiden, dog inden for en hvis
+tolerance.
 
-Hvis spektret er meget rent, er det også muligt at benytte dobbelkoincidenser. I det tilfælde hvor
-der i en hændelse kun blev detekteret to partikler, så er de formentlig to tredjedele af en
-triplet. Energien af den sidste er så differencen mellem Q-værdien og den samlede energi af de
-detekterede partikler. Det er en afvejning af disse skal tages med. De øger antallet af detekterede
-koincidenser kraftigt, men samtidig giver de også andledning til fejl. Nogle åbenlyse fejl, såsom at
-tjekke om energien af den tredje bliver negativ, opfyldelse af impulsbevarelse kan afhjælpe nogle af
-problemerne.
+\paragraph{Trippelkoincidenser}
+\label{sec:trippelkoincidenser}
+Hvis der i en given hændelse blev detekteret tre eller flere partikler, blev der ledt efter
+trippelkoincidenser. Disse kan forekomme på to måder i detektorerne. Enten vil partiklerne have ramt
+hver sin detektor eller også vil to have ramt den samme, mens den tredje rammer en anden
+detektor. Hvis den samlede energi af en sådan triplet er lig med Q-værdien, inden for en hvis
+tolerance, er det formentlig et sæt af tre matchende $\alpha$-partikler
+\begin{equation}
+  \label{eq:trippelE}
+  T_{1} + T_{2} + T_{3} = Q \pm \Delta E
+\end{equation}
+Det kritium kan forbedres ved at tage højde for impulsen. Idet detektorerne er positionsfølsomme, er
+det muligt at udregne azimut- og polarvinklen af hver partikel. Impulsen kan så udregnes fra
+energien $p \propto \sqrt{T}$. For hver triplet udregnes den samlede impuls i CM, hvor den per
+konstruktion skal være nul
+\begin{equation}
+  \label{eq:pCMnul}
+  \mvec{p_{1}} + \mvec{p_{2}} + \mvec{p_{3}} = \mvec{0}.
+\end{equation}
+Ud fra impulsvektorerne er det også muligt at tjekke to andre krav. Er der tale om en sand
+koincidens skal summen af vinklerne vektorerne imellem være lig 360\degree. Endvidere foregår
+henfaldet i et plan, hvilket matematisk kan formuleres som
+\begin{equation}
+  \mvec{p_{3}} \cdot (\mvec{p_{1}} \times \mvec{p_{2}}) = \mvec{0}.
+\end{equation}
 
-På trods af denne matching forekom, der stadig støj i spektret. Støjen var dog lokaliseret til ikke
-kritiske energier, så det var muligt blot at skære disse væk.
+\paragraph{Dobbelkoincidenser}
+\label{sec:dobbelkoincidenser}
+
+Hvis spektret er meget rent, er det også muligt at benytte dobbelkoincidenser. Såfremt der kun blev
+detekteret to partikler i en hændelse, er de formentlig to tredjedele af en triplet. Energien af den
+sidste er derfor differencen mellem Q-værdien og den samlede energi af de detekterede partikler
+\begin{equation}
+  \label{eq:dobbeltE}
+  T_{3} = Q - T_{1} - T_{2}.
+\end{equation}
+
+Det er en afvejning, om disse skal medtages. Antallet af detekterede koincidenser øges kraftigt, men
+samtidig giver de også anledning til fejl. Nogle åbenlyse fejl kan reduceres ved at tjekke om,
+energien af den tredje partikel bliver negativ samt at $x$ og $y$ for Dalitzplottet ligger inden for
+den indskrevne cirkel.
+
+Har man udregnet impulsvektorerne for de to detekterede partikler, kan der indføres
+et ekstra krav til dobbelkoincidenserne. Den samlede impuls i CM skal være nul. Den ukendte
+impuls kan findes ud fra de to detekterede partiklers impuls
+\begin{equation}
+  \mvec{p_{3}} = -(\mvec{p_{1}} + \mvec{p_{2}}).
+\end{equation}
+Den kinetiske energi kan også findes ud fra impulsens størrelse, hvilket leder til kravet om, at de to
+estimater skal stemme overens
+\begin{equation}
+  T_{3} = \frac{\lVert\mvec{p_{1}} + \mvec{p_{2}}\rVert^{2}}{2m_{\alpha}}.
+\end{equation}
