@@ -12,10 +12,10 @@ ADK'en var optaget, var derfor meget mindre.
 
 Til at foretage en kalibrering mellem energi og kanalnumre blev der benyttet tre $\alpha$-kilder. Det
 viste sig dog hurtigt, at der var problemer med kalibreringen. Hvis der blev benyttet 2\MeV
-protoner, forekom den tilsvarende Rutherfordtop i spektret for den inderste ring i detektor 4, ved
+protoner, forekom den tilsvarende Rutherfordtop i spektret for den inderste ring i detektor 4 ved
 \SI{2.6}{\MeV}. Forklaringen på dette var, at detektorerne havde et inaktivt område, et såkaldt
 dødlag, hvor partiklerne tabte energi, før de blev detekteret. Fordi kalibreringskilden var en
-$\alpha$-kilde, og stoppeevnen af disse er større end protoners, blev der overkompenseret for dødlaget.
+$\alpha$-kilde og stoppeevnen af disse er større end protoners, blev der overkompenseret for dødlaget.
 
 På baggrund af denne observation blev der foretaget nye målinger med kalibreringskilden, så
 tykkelsen af det inaktive område kunne fastslås. Selve proceduren findes i
@@ -27,7 +27,7 @@ dødlaget.  I mellemtiden var de to W1 detektorer også blevet tilføjet. Kalibr
 detektorerne bliver verificeret i \cref{cha:rutherford}. De originale data blev kasseret og nye
 målinger ved 2, \num{2.37} og \SI{2.65}{\MeV} blev foretaget. Disse nye data blev alle
 indsamlet med det logiske kredsløb indstillet til \lAND og over et længere tidsrum for at øge
-datamængden. Den eneste ulempe var, at der ikke blev foretaget målinger over et lige så bredt
+datamængden. Den eneste ulempe var, at der ikke blev foretaget målinger over et ligeså bredt
 energiinterval. Analysen af disse data findes i \cref{cha:sekventielt-henfald}.
 
 \section{Analysearbejdet}
@@ -38,14 +38,14 @@ udvidelser til programmeringssproget C++. De rå datafiler blev konverteret til 
 datastruktur, kaldet et ROOT-træ. Indlæsning af data foregår med en standardalgoritme og foregår en
 hændelse ad gangen. For hver hændelse registreres for hver detektor antal detektioner i
 forsiden og bagsiden af detektoren, de ramte strips samt kanalnummeret for de enkelte
-detektioner. Opgaven var så at rekonstruere de fysiske begivenheder ud fra disse tal.
+detektioner. Opgaven var  at rekonstruere de fysiske begivenheder ud fra disse tal.
 
 Først og fremmest er det nødvendigt at foretage en kalibrering for hver enkelt strip, så
 kanalnumrene kan oversættes til kinetisk energi. Endvidere kan både azimut- og polarvinklen
 rekonstrueres ud fra den ramte for- og bagstrip. Dette gøres ud fra både detektortypen og afstanden
 til detektoren. Det er ikke muligt at bestemme afstanden til detektorerne med stor nøjagtighed, da
 opstillingen er meget kompakt og detektorerne skrøbelige. Derfor var det nødvendigt at justere
-parametererne for placeringen af de forskellige detektorer indtil resultaterne var selvkonsistent
+parametererne for placeringen af de forskellige detektorer indtil resultaterne var selvkonsistente
 samt konsistent med veletableret fysik, såsom energiens vinkelafhængighed for Rutherfordspredte
 protoner. Dette er beskrevet i \cref{cha:rutherford}.
 

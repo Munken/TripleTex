@@ -1,9 +1,9 @@
  For trippelkoincidenserne har al kinematisk information været tilgængelig, hvorimod
- dobbelkoincidenserne bygger på antagelsen om et rent spektrum. Dermed må udgangspunktet være at
+ dobbeltkoincidenserne bygger på antagelsen om et rent spektrum. Dermed må udgangspunktet være at
  trippelkoincidensspektret er det rigtige. 
 
  På \cref{fig:aSingleSpectrum} ses spektret for de enkelte detektorer for de hændelse, hvor der er
- detekteret to eller flere partikler. Disse spektrer stemmer også overens med hypotesen om
+ detekteret to eller flere partikler. Disse spektre stemmer også overens med hypotesen om
  sekventielt henfald med tydelige $\alpha_{0}$ og $\alpha_{1}$. Begge disse toppe ligger ved energier, hvor der
  ikke kommer forstyrrelser pga. proton beamet, så derfor må det antages at disse skyldes
  $\alpha$-partikler. På baggrund af dette vil jeg argumenterer for, at det samlede spektre underlagt
@@ -32,7 +32,7 @@
  Endvidere så er $\alpha$-henfald kraftigt energiafhængige \cite[s. 236]{Martin}, og $\alpha_{0}$ må derfor
  forventes derfor at være den primære henfaldskanal. \fxfatal{Kan man sige det så groft?}
  I forhold til hvor kraftigt $\alpha_{1}$-toppen dominere på \cref{fig:alphaSpectrum}a, så taler dette
- kraftigt imod at dobbelkoincidensspektret svarer til det sande spektrum.
+ kraftigt imod at dobbeltkoincidensspektret svarer til det sande spektrum.
 
  Spektrene på \cref{fig:aSingleSpectrum} forklarer endvidere, hvorfor fordelingen af de sekundære
  $\alpha$-partikler ikke træder tydeligere frem. Dette skyldes den store mængde resonanser i den lave ende
@@ -47,7 +47,7 @@
  sekventielt henfald. Endvidere er det også vist at det, med passende koincidensbetingelser, er
  muligt at ekstrahere et samlet energispektrum, og at dette også er i overensstemmelse med
  sekventielt henfald. Det må dog noteres, at de optagne spektre ikke er rene nok til at
- dobbelkoincidenserne kan benyttes. 
+ dobbeltkoincidenserne kan benyttes. 
 
 
 

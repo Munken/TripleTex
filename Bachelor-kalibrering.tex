@@ -6,7 +6,7 @@ kalibrering. Til dette formål blev der benyttet en kilde, der bestod af tre $\a
 \ce{^{241}Am}, \ce{^{239}Pu} og \ce{^{244}Cm}.
 
 Da forstærkningen er indstillet forskelligt i de enkelte strips og sektorer, er det nødvendigt at
-kalibrere dem enkeltvisn. Linierne er skarpt adskilte og kalibreringen kan udføres ved at fitte
+kalibrere dem enkeltvis. Linierne er skarpt adskilte og kalibreringen kan udføres ved at fitte
 lineært til de pågældende centroid værdier.
 
 Det skulle dog vise sig at være mere vanskeligt end først antaget, da detektoren havde et inativt
@@ -28,7 +28,7 @@ antages at være konstant gennem dødlaget.
 
 Det skal bemærkes, at dette er en approksimation, da producenten har oplyst, at dødlaget består både
 af aluminium og silicium. Disse grundstoffer er hhv. nummer 13 og 14 i det periodiske system, så er
-deres stoppeevne er stort set ens, og dødlaget approksimeres derfor til et enkelt lag silicium.
+deres stoppeevne er stort set ens og dødlaget approksimeres derfor til et enkelt lag silicium.
 \begin{figure}[h]
   \centering
   \includegraphics[width=7cm]{DeadLayer}
@@ -57,7 +57,7 @@ Det er ikke muligt at lave et fit til data med $\Delta x$ som en fri parameter, 
 dødlaget er vurderet ud fra de teoretiske kurver, som er plottet på \cref{fig:dead}. Data er
 konsistent med en tykkelse på hhv. \SI{3.3(5)}{\um} og \SI{4.2(5)}{\um} for detektor 4 og 3. En
 tilsvarende analyse er foretaget med S3 detektorerne roteret 180\degree. Her er resultatet, at
-dødlaget var væsentlig mindre blot \SI{0.6(1)}{\um}. 
+dødlaget var væsentlig mindre; blot \SI{0.6(1)}{\um}. 
 
 \begin{figure}[h]
   \centering
@@ -86,7 +86,7 @@ i stedet benyttes middelrækkevidden for en partikel i et givent materiale. Ækv
   R(E) = R(E_{0}) + \frac{\Delta x}{\cos \phi} .
 \end{equation}
 
-Rækkeviden som funktion af energien er også tabuleret i \cite{Ziegler}, så for en given hændelse
+Rækkevidden som funktion af energien er også tabuleret i \cite{Ziegler}. For en given hændelse
 blev $R(E_{0})$ bestemt ved lineær interpolation mellem de to nærmeste tabulerede værdier. Til dette
 adderes tykkelsen af dødlaget, hvor der blev taget højde for vinklen. Den samme tabel blev også
 benyttet den modsatte vej, hvor energien blev bestemt ud fra den samlede rækkevidde. Der blev igen

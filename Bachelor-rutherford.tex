@@ -11,10 +11,12 @@ mellem kalibreringen og teorien.
 \label{sec:teori}
 
 \begin{figure}[b]
+  \vspace{5mm}
   \centering
   \includegraphics[width=0.4\columnwidth]{Rutherford-kin}
   \caption{Principskitse af impulserne i spredningsprocessen $b + t \rightarrow b' + t'$ set fra massemidtpunktssystemet.}
   \label{fig:ruther-kin}
+  \vspace{-5mm}
 \end{figure}
 
 \Cref{fig:ruther-kin} skitserer den generelle spredningsproces
@@ -38,7 +40,7 @@ $T_{b}$
   \label{eq:rutherUdCM}
   V_{b}' = \frac{\mu}{m_{b}}V_{b} = \frac{m_{t}}{m_{t}+m_{b}} \sqrt{\frac{2T_{b}}{m_{b}}},
 \end{equation}
-hvor $\mu$ betegner den reducrede masse. Indsættes denne i \cref{eq:udkommendeE} kan energien
+hvor $\mu$ betegner den reducerede masse. Indsættes denne i \cref{eq:udkommendeE} kan energien
 udtrykkes ved kun én fri variabel
 \begin{equation}
   \label{eq:rutherUdLab}
@@ -59,7 +61,7 @@ Indsættes dette i \cref{eq:udkommendeE} er det muligt at bestemme energien af $
 fra $\theta'$
 \begin{align}
   T_{b'} = m_{b'} \Bigl(T_{b}&\frac{m_{b}}{(m_{t} + m_{b})^{2}} + \frac{E_{CM}}{m_{b'}(1+\frac{m_{b'}}{m_{t'}})} \notag\\
-  &+ 2 \sqrt{T_{B}E_{CM} \frac{m_{b}}{m_{b'}}}\bigl[(m_{t} + m_{b})(1 + \frac{m_{b'}}{m_{t'}})^{1/2}\bigr]^{-1} \cos \theta'\Bigr)
+  &+ 2 \sqrt{T_{B}E_{CM} \frac{m_{b}}{m_{b'}}}\bigl[(m_{t} + m_{b})(1 + \frac{m_{b'}}{m_{t'}})^{1/2}\bigr]^{-1} \cos \theta'\Bigr).
   \label{eq:alphaUdLab}
 \end{align}
 Som ved Rutherfordspredning giver denne proces også anledning til et kontinuum i LAB-systemet og
@@ -103,8 +105,7 @@ skyldes, at disse har et lille dødlag, der skal tages højde for. Dette er der 
 denne opgave.
 
 Data viser endvidere, at foliet ikke kun består af \Carb, men også af andre
-grundstoffer. % Her er både tale om tungere grundstoffer, hvor protoner taber mindre energi til rekyl
-% og signallet ligger derfor over den røde linie, samt et enkelt let grundstof under den røde linie.
+grundstoffer. 
 
 Her er både tale om et enkelt let grundstof, der ses under den røde linie samt tungere grundstoffer
 over linien. Disse fordeler sig således, da de lette grundstoffer får en højere rekylenergi ved
@@ -114,7 +115,7 @@ sammenstød med protonen. Dette kan muligvis skyldes vand på foliet.
 \label{sec:tykt-folie}
 
 Her ses på data fra protonbeskydning af det \Bor-folie, som er benyttet gennem resten af
-eksperimentet. Her forventes ud over Rutherfordspredning også processen
+eksperimentet. Her forventes ud over Rutherfordspredning også reaktionen
 $p + \Bor \rightarrow \Carb*$. Dette kulstof er ustabilt og vil henfalde igen. I
 \cref{cha:sekventielt-henfald} vil der blive redegjort for henfaldsprocessen i detaljer, specifikt
 udledes i \cref{sec:tilstand} et udtryk for energien i CM
@@ -126,32 +127,32 @@ hvor det første led følger af $V_{CM} = \mu V_{b} / m_{b}$.
 \Cref{fig:1077} viser data og den teoretiske kurve givet ved \cref{eq:alphaUdLab}. Her er anvendt
 rækkevidden for $\alpha$-partikler, hvilket er årsagen til, at Rutherfordlinien passer så
 dårligt. Rutherfordlinien i de runde detektorer krummer opad mod områderne svarende til store
-detektorvinkler. Dette skyldes overkompensation for dødlag.  Den samme effekt ses også i $\alpha$-linien
+detektorvinkler. Dette skyldes overkompensation for dødlaget.  Den samme effekt ses også i $\alpha$-linien
 i CM, hvilket tyder på, at dødlaget er tyndere end de estimerede \SI{0,6}{\um}.
 
 På trods af disse små effekter stemmer spektret fint overens med de kinematiske kurver, hvilket
 indikerer, at \Carb* kan foretage $\alpha$-henfald.
 
-Det noteres, at \Bor foliet indeholder flere urenheder end bagbeklædningen. 
+Det noteres, at \Bor foliet indeholder flere urenheder end bagbeklædningen.
 \begin{figure}[ht]
+  \fxfatal{Her skal tilføjes linier til CM.}
   \centering
   \subbottom[LAB systemet]{\includegraphics[width=0.49\columnwidth]{AngleEnergy1077-LABd}}%
   \hfill
   \subbottom[CM for $\alpha$-partiklen]{\includegraphics[width=0.49\columnwidth]{AngleEnergy1077-CMa}}%
   \caption{Antal tællinger som funktion af energi og vinkel for spredning af protoner på \Be. Den
     øverste røde linie er \cref{eq:alphaUdLab} og den nederste er \cref{eq:rutherUdLab}. I begge
-    tilfælde er $m_{t} = m_{\!\!\Bor}$. Fra venstre mod højre ses
-    data fra detektor 4, 1 og 3. Større densitet angiver højere antal tællinger.}
+    tilfælde er $m_{t} = m_{\!\!\Bor}$. Fra venstre mod højre ses data fra detektor 4, 1 og
+    3. Større densitet angiver højere antal tællinger.}
   \label{fig:1077}
 \end{figure}
 
-\section{Konklusion}
+\section{Resultater}
 \label{sec:ruther-konklusion}
-Det kan konkluderes, at de eksperimentielt opnåede kinematiske kurver stemmer godt overens med de
+Det er vist, at de eksperimentielt opnåede kinematiske kurver stemmer godt overens med de
 teoretiske. Der er observeret afvigelser, der indikerer, at tykkelsen af dødlaget for S3
 detektorerne er overvurderet en smule og W1 detektorerne muligvis har et lille dødlag. Størrelsen af
-disse afvigelser er dog små. Det kan derfor konkluderes, at kalibreringen kan benyttes til den
-videre analyse.
+disse afvigelser er dog små. Kalibreringen kan derfor benyttes til den videre analyse.
 
 
 
