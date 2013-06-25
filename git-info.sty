@@ -1,0 +1,318 @@
+% Experimental git-info package
+\ProvidesPackage{git-info}[2009/06/13 v0.20 Using informations from git. (mpg)]
+
+\RequirePackage{xkeyval}
+
+% macros and tests for options
+\newcommand\GI@max@depth{8}
+\newcommand\GI@gih@name{git-info.gih}
+
+\DeclareOptionX{maxdepth}{\renewcommand\GI@max@depth{#1}}
+\DeclareOptionX{helper-file}{\renewcommand\GI@gih@name{#1}}
+
+\ProcessOptionsX
+
+% main user macro
+
+\newcommand\gitinfo[2]{%
+  \ifcsname GI@@#1@ok\endcsname
+    \GI@gitinfo{#1}{#2}%
+  \else
+    \PackageError{git-info}{%
+      No information available for #1}{%
+      Possible causes are:\MessageBreak
+      - for @head: you are not in a git repository.\MessageBreak
+      - for @latest, @current, or a file: you did not\MessageBreak
+      set up git-info-helper properly or forgot to\MessageBreak
+      use \protect\gitfile{#1} or \protect\gitfile{<anything>}.}%
+    \detokenize{(git-#1-#2)}%
+  \fi}
+
+\newcommand\GI@gitinfo[2]{%
+  \GI@ifdt{#2}{%
+    \GI@gitinfo@date{#1}{#2}%
+    }{%
+    \csname GI@@#1@#2\endcsname}}
+
+\newcommand\GI@ifdt[1]{%
+  \GI@ifdt@#1dt\@nil}
+\@ifdefinable\GI@ifdt@{%
+  \def\GI@ifdt@#1dt#2\@nil{%
+    \GI@ifempty{#1}}}
+
+\newcommand\GI@gitinfo@date[2]{%
+  \expandafter\GI@gitinfo@date@\detokenize{#2@@}\@nil{#1}\@nil}
+\@ifdefinable\GI@gitfinfo@date@{%
+  \begingroup \edef\@tempa{\endgroup
+    \def\noexpand\GI@gitinfo@date@
+    \detokenize{dt@}##1\string @}\@tempa#2\@nil#3\@nil{%
+    \csname GI@dtmac@#1\expandafter\expandafter\expandafter\endcsname
+    \csname GI@@#3@datetime\endcsname}}
+
+% private values
+\newif\ifGI@is@a@repo@
+
+% private constants
+\newcommand\GI@repo@prefix{}
+\newcommand\GI@head@file{\GI@repo@prefix/.git/HEAD}
+\newcommand\GI@gih@file{\GI@repo@prefix/\GI@gih@name}
+\@ifdefinable\GI@read{\let\GI@read\@inputcheck}
+
+% \TeX{}nical tools
+
+\newcommand\GI@ifempty[1]{%
+  \expandafter\ifx\expandafter\relax\detokenize{#1}\relax
+    \expandafter\@firstoftwo
+  \else
+    \expandafter\@secondoftwo
+  \fi}
+
+\newcommand\GI@export@macro[1]{%
+  \edef\@tempa{\endgroup
+    \def\noexpand#1{#1}}%
+  \@tempa}
+
+\newcommand\GI@set@export[2]{%
+  \def\noexpand#1{\unexpanded\expandafter{#2}}}
+
+\newcommand\GI@set@export@name[2]{%
+  \expandafter\GI@set@export\csname #1\endcsname{#2}}
+
+\newcommand\GI@safe@reading{%
+  \let\do\@makeother \dospecials
+  \catcode32 10
+  \catcode09 12
+  \endlinechar\m@ne
+  \everyeof{\noexpand}}
+
+% finding the .git directory
+
+\newcommand\GI@check@repo@prefix{%
+  \GI@is@a@repo@true
+  \IfFileExists{./\GI@head@file}{%
+    \edef\GI@repo@prefix{./}%
+    }{%
+    \GI@set@repo@prefix}}
+
+\newcommand\GI@set@repo@prefix{%
+  \begingroup \count@\GI@max@depth\relax
+  \GI@set@repo@prefix@}
+
+\newcommand\GI@set@repo@prefix@{%
+  \advance\count@\m@ne
+  \ifnum\count@<\z@
+    \expandafter\GI@not@a@git@repo
+  \else
+    \edef\GI@repo@prefix{../\GI@repo@prefix}%
+    \IfFileExists{\GI@head@file}{%
+      \GI@export@macro\GI@repo@prefix
+      }{%
+      \expandafter\GI@set@repo@prefix@}%
+  \fi}
+
+\newcommand\GI@not@a@git@repo{%
+  \endgroup
+  \PackageWarningNoLine{git-info}{%
+    Current directory is not a git repository.\MessageBreak
+    \protect\gitinfo{@head} will NOT work}%
+  \GI@is@a@repo@false
+  \endinput}
+
+% getting all informations about HEAD
+
+\newcommand\GI@get@head@all{%
+  \begingroup
+  \GI@get@head@path
+  \GI@get@branch
+  \GI@get@head@hash
+  \GI@get@head@infos
+  \GI@compute@datetime
+  \edef\@tempa{\endgroup
+    \GI@set@export\GI@@@head@commit{\GI@head@commit}%
+    \GI@set@export\GI@@@head@branch{\GI@head@branch}%
+    \GI@set@export\GI@@@head@author{\GI@head@author}%
+    \GI@set@export\GI@@@head@mail{\GI@head@mail}%
+    \GI@set@export\GI@@@head@datetime{\GI@datetime}%
+    \GI@set@export\GI@@@head@ok{\empty}}%
+  \@tempa}
+
+% finding the path to head
+
+\newcommand\GI@get@head@path{%
+  \openin\GI@read\GI@head@file
+  \begingroup \GI@safe@reading
+  \read\GI@read to\GI@head@file@contents
+  \GI@export@macro\GI@head@file@contents
+  \closein\GI@read
+  \expandafter\GI@set@head@path\GI@head@file@contents\@nil}
+
+\@ifdefinable\GI@set@head@path{%
+  \begingroup 
+  \GI@safe@reading
+  \edef\@tempa{\endgroup
+    \def\noexpand\GI@set@head@path\scantokens{ref:} }
+  \@tempa#1\@nil{\def\GI@head@path{#1}}}
+
+% extracting the branch name from the path to head
+
+\newcommand\GI@get@branch{%
+  \expandafter\GI@set@branch\GI@head@path\@nil}
+
+ \@ifdefinable\GI@set@branch{%
+   \def\GI@set@branch refs/heads/#1\@nil{%
+     \def\GI@head@branch{#1}}}
+
+% finding the hash (sha1) of head
+
+\newcommand\GI@get@head@hash{%
+  \openin\GI@read\GI@repo@prefix/.git/\GI@head@path
+  \begingroup \GI@safe@reading
+  \read\GI@read to\GI@head@hash
+  \GI@export@macro\GI@head@hash
+  \closein\GI@read}
+
+% finding head commit infos
+
+\newcommand\GI@get@head@infos{%
+  \openin\GI@read\GI@repo@prefix/.git/logs/\GI@head@path
+  \begingroup \GI@safe@reading
+  \GI@get@head@infos@loop}
+
+\count@\catcode09 \catcode09 12
+\newcommand\GI@get@head@infos@loop{%
+  \read\GI@read to\GI@log@line
+  \expandafter\GI@infos@from@line\GI@log@line^^09\@nil
+  \ifx\GI@commit\GI@head@hash
+    \expandafter\GI@get@head@infos@end
+  \else
+    \expandafter\GI@get@head@infos@loop
+  \fi}
+
+\@ifdefinable\GI@infos@from@line{%
+  \def\GI@infos@from@line#1 #2 #3 <#4> #5 #6^^09#7\@nil{%
+    \def\GI@commit{#2}%
+    \def\GI@name{#3}%
+    \def\GI@mail{#4}%
+    \def\GI@timestamp{#5}%
+    \def\GI@timezone{#6}%
+    % GI@what currently unused
+    % (don't forget to remove the spurious tab before using it latter)
+    \def\GI@what{#7}}}
+\catcode09\count@
+
+\newcommand\GI@get@head@infos@end{%
+  \closein\GI@read
+  \edef\@tempa{\endgroup
+    \GI@set@export\GI@timestamp{\GI@timestamp}%
+    \GI@set@export\GI@timezone{\GI@timezone}%
+    \GI@set@export\GI@head@commit{\GI@commit}%
+    \GI@set@export\GI@head@author{\GI@name}%
+    \GI@set@export\GI@head@mail{\GI@mail}}%
+  \@tempa}
+
+% time conversions
+
+% a = quotient(a, b) * b + remainder(a, b)
+% with 0 <= remainder(a, b) < abs(b)
+% assumes a >= 0 and b > 0
+\newcommand\GI@int@quotient[2]{%
+  \ifnum\numexpr#1=\z@ \z@ \else \numexpr(#1-((#2-1)/2))/#2\relax \fi}
+\newcommand\GI@int@remainder[2]{%
+  \numexpr#1-\GI@int@quotient{#1}{#2}*#2\relax}
+
+% #1 = cs to define, #2 = modulo; sets \count@ too
+\newcommand\GI@extract@units[2]{%
+  \edef#1{\number\GI@int@remainder{\count@}{#2}}%
+  \divide\count@#2\relax}
+
+% #1 = nb of year since epoch, result = nb of days since epoch
+% Ex: 0 => 0, 365, 730, 1096, 1461, ...
+\newcommand\GI@years@to@days[1]{%
+  \numexpr365*(#1)+\GI@int@quotient{#1+1}{4}\relax}
+
+% \count@ = days since epoch (before), day of year (after)
+\newcommand\GI@extract@year{%
+  \edef\GI@year{\number\numexpr\GI@int@quotient{\count@}{365}%
+    +\ifnum\count@<\GI@years@to@days{%
+      \GI@int@quotient{\count@}{365}}1969 \else1970 \fi}%
+  \advance\count@-\number\GI@years@to@days{\GI@year-1970}\relax}
+
+% sets month and day of month
+\newcommand\GI@extract@month@day{%
+  \ifnum\GI@int@remainder{\GI@year}{4}=\z@
+    \ifnum\count@>58
+      \ifnum\count@=59 \def\GI@hook{\def\GI@day{29}} \fi
+      \advance\count@\m@ne
+    \fi
+  \fi
+  \countdef\GI@month\tw@ \GI@month\@ne
+  \@for\GI@month@length:=31,28,31,30,31,30,31,31,30,31,30,31\do{%
+    \GI@extract@month@day@loop}%
+  \csname GI@hook\endcsname}
+
+\newcommand\GI@extract@month@day@loop{%
+  \ifnum\count@<\GI@month@length\relax
+    \edef\GI@day{\number\numexpr1+\count@}%
+    \let\GI@extract@month@day@loop\relax
+  \else
+    \advance\GI@month\@ne
+    \advance\count@-\GI@month@length
+  \fi}
+
+\newcommand\GI@compute@datetime{%
+  \begingroup
+  \expandafter\expandafter\expandafter
+  \GI@parse@timezone\csname GI@timezone\endcsname
+  \count@\numexpr\csname GI@timestamp\endcsname
+    \GI@tzsign((\GI@tzhour*60+\GI@tzmin)*60)\relax
+  \GI@extract@units\GI@sec{60}%
+  \GI@extract@units\GI@min{60}%
+  \GI@extract@units\GI@hour{24}%
+  \GI@extract@year
+  \GI@extract@month@day
+  \edef\GI@datetime{%
+    {\GI@year}{\GI@two@d{\the\GI@month}}{\GI@two@d\GI@day}%
+    {\GI@two@d\GI@hour}{\GI@two@d\GI@min}{\GI@two@d\GI@sec}%
+    {\GI@tzsign}{\GI@two@d\GI@tzhour}{\GI@two@d\GI@tzmin}}%
+  \edef\@tempa{\endgroup
+    \GI@set@export@name{GI@datetime}{\GI@datetime}}
+  \@tempa}
+
+\newcommand\GI@parse@timezone[5]{%
+  \def\GI@tzsign{#1}%
+  \def\GI@tzhour{#2#3}%
+  \def\GI@tzmin{#4#5}}
+
+\newcommand\GI@two@d[1]{%
+  \ifnum#1<10 0\number#1\else \number#1\fi}
+
+% displaying date - defining user macros
+
+\newcommand\gitNewDateFormat[2]{%
+  \expandafter\newcommand\csname GI@dtmac@#1\endcsname[9]{#2}}
+
+\gitNewDateFormat{}         {#1-#2-#3 #4:#5}
+\gitNewDateFormat{datetime} {#1-#2-#3T#4:#5:#6#7#8:#9}
+\gitNewDateFormat{date}     {#1-#2-#3}
+\gitNewDateFormat{time}     {#4:#5:#6}
+\gitNewDateFormat{timezone} {#7#8:#9}
+
+\gitNewDateFormat{today}{%
+  \@ifundefined{today}{%
+    \PackageError{git-info}{%
+      \noexpand\today undefined! Did you load babel?}{%
+      You cannot use \noexpand\gitXXXtoday macros if
+      \noexpand\today is undefined.\MessageBreak
+      This macro is usually defined by the babel package.}%
+    }{%
+    \begingroup
+    \year#1 \month#2 \day#3
+    \today
+    \endgroup}}
+
+% main
+
+\GI@check@repo@prefix
+\ifGI@is@a@repo@
+  \GI@get@head@all
+\fi
